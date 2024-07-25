@@ -1,0 +1,6 @@
+node_modules
+.env
+firestore-service-account.json
+key.json
+data/
+student-attendance/
