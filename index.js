@@ -116,14 +116,9 @@ require("dotenv").config();
 
 app.use(cors());
 
-let serviceAccountKey = process.env.SERVICE_ACCOUNT_KEY;
-if (process.env.NODE_ENV === "production") {
-  serviceAccountKey = JSON.parse(process.env.SERVICE_ACCOUNT_KEY);
-}
-
 async function getClassData() {
   const auth = new google.auth.GoogleAuth({
-    keyFile: serviceAccountKey,
+    keyFile: process.env.SERVICE_ACCOUNT_KEY,
     scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
   });
 
