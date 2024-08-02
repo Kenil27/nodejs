@@ -114,7 +114,12 @@ require("dotenv").config();
 //   console.error("Error loading CSV:", error);
 // });
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://aadijinband.web.app/",
+    methods: ["GET"],
+  })
+);
 
 async function getClassData() {
   const auth = new google.auth.GoogleAuth({
